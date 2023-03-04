@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lista de gastos</title>
+  </head>
+  <body>
+    <h1>Lista de gastos</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Valor</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+      </tr>
+      {% for dado in dados %}
+      <tr>
+        <td>{{ dado[0] }}</td>
+        <td>{{ dado[1] }}</td>
+        <td>{{ dado[2] }}</td>
+        <td>{{ dado[3] }}</td>
+        <td>{{ dado[4] }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td>Total:</td>
+        <td></td>
+        <td>{{ total }}</td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

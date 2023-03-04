@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Inserir dados</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <div class="inserir">
+    <h1>Inserir dados</h1>
+    <form method="POST" action="/">
+      <label>Data:</label><br>
+      <input type="date" name="data" required><br>
+      <label>Valor:</label><br>
+      <input type="number" step="0.01" name="valor" required><br>
+      <label>Descrição:</label><br>
+      <input type="text" name="descricao" required><br>
+      <label>Categoria:</label><br>
+      <input type="text" name="categoria" required><br><br>
+      <input class="botao" style="margin-bottom: 1%; background-color: #d3d3d3;" type="submit" value="Inserir">
+    </form>
+  </div>
+  <div class="lista">
+    <h1>Lista de gastos</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Data</th>
+        <th>Valor</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+      </tr>
+      {% for dado in dados %}
+      <tr>
+        <td>{{ dado[0] }}</td>
+        <td>{{ dado[1] }}</td>
+        <td>{{ dado[2] }}</td>
+        <td>{{ dado[3] }}</td>
+        <td>{{ dado[4] }}</td>
+      </tr>
+      {% endfor %}
+      <div class="total">
+      <tr>
+        <td>Total:</td>
+        <td></td>
+        <td><b>R$ {{ total }}</b></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </div>
+    </table>
+  </div>
+  </body>
+</html>
